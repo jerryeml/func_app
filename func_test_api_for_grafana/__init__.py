@@ -31,6 +31,8 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
                     'l2_test': False}
     }
 
+    func.HttpResponse.mimetype = 'application/json'
+    func.HttpResponse.charset = 'utf-8'
     if name:
         return func.HttpResponse(json.dumps(data), status_code=200)
     else:
