@@ -1,3 +1,4 @@
+import json
 import logging
 
 import azure.functions as func
@@ -31,6 +32,6 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     }
 
     if name:
-        return func.HttpResponse(data, status_code=200)
+        return func.HttpResponse(json.dumps(data), status_code=200)
     else:
-        return func.HttpResponse(data, status_code=200)
+        return func.HttpResponse(json.dumps(data), status_code=200)
