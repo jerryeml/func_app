@@ -31,9 +31,6 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     }
 
     if name:
-        return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully. api_response: {data}")
+        return func.HttpResponse(data, status_code=200)
     else:
-        return func.HttpResponse(
-            f"This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response. api_response: {data}",
-            status_code=200
-        )
+        return func.HttpResponse(data, status_code=200)
